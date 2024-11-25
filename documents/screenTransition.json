@@ -1,0 +1,37 @@
+{
+  "key": "screenTransition",
+  "value": [
+    {
+      "id": "プロフィール管理",
+      "value": "{\n    \"mermaid\": \"graph LR\\n    Login[ログイン画面] --> Profile[プロフィール一覧画面]\\n    Profile --> ProfileEdit[プロフィール編集画面]\\n    Profile --> CareerEdit[経歴情報編集画面]\\n    Profile --> Auth[アクセス権限設定画面]\\n    \\n    ProfileEdit --> Profile\\n    CareerEdit --> Profile\\n    Auth --> Profile\\n    \\n    subgraph プロフィール管理\\n        Profile\\n        ProfileEdit\\n        CareerEdit\\n        Auth\\n    end\\n    \\n    ProfileEdit --> Confirm[変更内容確認画面]\\n    Confirm --> Complete[登録完了画面]\\n    Complete --> Profile\\n    \\n    CareerEdit --> CareerConfirm[経歴情報確認画面]\\n    CareerConfirm --> CareerComplete[経歴登録完了画面]\\n    CareerComplete --> Profile\\n    \\n    Auth --> AuthConfirm[権限設定確認画面]\\n    AuthConfirm --> AuthComplete[権限設定完了画面]\\n    AuthComplete --> Profile\"\n}"
+    },
+    {
+      "id": "スキル管理",
+      "value": "{\n    \"mermaid\": \"graph LR\\n    Login[ログイン画面] --> Home[ホーム画面]\\n    Home --> SkillList[スキル一覧画面]\\n    Home --> SkillSearch[スキル検索画面]\\n    SkillList --> SkillReg[スキル登録画面]\\n    SkillList --> SkillEdit[スキル編集画面]\\n    SkillSearch --> SearchResult[検索結果一覧画面]\\n    SearchResult --> UserProfile[社員プロフィール画面]\\n    SkillReg --> SkillComplete[登録完了画面]\\n    SkillEdit --> SkillComplete\\n    Home --> Notification[通知一覧画面]\\n    Notification --> SkillUpdate[スキル更新画面]\\n    SkillUpdate --> SkillComplete\"\n}"
+    },
+    {
+      "id": "興味関心管理",
+      "value": "{\n    \"mermaid\": \"graph LR\\n    Top[トップページ] --> Interest[興味関心一覧画面]\\n    Interest --> InterestReg[興味関心登録画面]\\n    Interest --> InterestEdit[興味関心編集画面]\\n    InterestReg --> InterestConf[興味関心登録確認画面]\\n    InterestConf --> InterestComp[興味関心登録完了画面]\\n    InterestEdit --> InterestEditConf[興味関心編集確認画面]\\n    InterestEditConf --> InterestEditComp[興味関心編集完了画面]\\n    Interest --> InterestDetail[興味関心詳細画面]\\n    InterestComp --> Interest\\n    InterestEditComp --> Interest\"\n}"
+    },
+    {
+      "id": "課題管理",
+      "value": "{\n    \"mermaid\": \"graph LR\\n    Login[ログイン画面] --> TopMenu[トップメニュー]\\n    TopMenu --> ChallengeList[課題一覧画面]\\n    ChallengeList --> ChallengeDetail[課題詳細画面]\\n    ChallengeList --> CreateChallenge[課題投稿画面]\\n    CreateChallenge --> ConfirmCreate[投稿内容確認画面]\\n    ConfirmCreate --> CompleteCreate[投稿完了画面]\\n    ChallengeDetail --> EditStatus[ステータス編集画面]\\n    EditStatus --> ConfirmStatus[ステータス更新確認画面]\\n    ConfirmStatus --> CompleteStatus[更新完了画面]\\n    ChallengeDetail --> CommentInput[コメント入力画面]\\n    CommentInput --> CompleteComment[コメント投稿完了画面]\"\n}"
+    },
+    {
+      "id": "アイデア管理",
+      "value": "{\n    \"mermaid\": \"graph LR\\n    Login[ログイン画面] --> IdList[アイデア一覧画面]\\n    IdList --> IdPost[アイデア投稿画面]\\n    IdList --> IdDetail[アイデア詳細画面]\\n    IdPost --> IdConfirm[投稿内容確認画面]\\n    IdConfirm --> IdComplete[投稿完了画面]\\n    IdComplete --> IdList\\n    IdDetail --> IdEval[アイデア評価画面]\\n    IdEval --> IdEvalConfirm[評価内容確認画面]\\n    IdEvalConfirm --> IdEvalComplete[評価完了画面]\\n    IdEvalComplete --> IdDetail\\n    IdDetail --> IdComment[コメント入力画面]\\n    IdComment --> IdCommentConfirm[コメント確認画面]\\n    IdCommentConfirm --> IdDetail\"\n}"
+    },
+    {
+      "id": "AIマッチング",
+      "value": "{\n    \"mermaid\": \"graph LR\\n    Login[ログイン] --> Home[ホーム画面]\\n    Home --> MatchSearch[マッチング検索]\\n    \\n    MatchSearch --> SkillMatch[スキルマッチング]\\n    SkillMatch --> MatchResult[マッチング結果一覧]\\n    \\n    MatchSearch --> TeamBuild[チーム編成支援]\\n    TeamBuild --> ProjectReq[プロジェクト要件入力]\\n    ProjectReq --> TeamSuggestion[チーム構成提案]\\n    \\n    MatchResult --> MemberDetail[メンバー詳細]\\n    TeamSuggestion --> MemberDetail\\n    \\n    MemberDetail --> Contact[コンタクト申請]\\n    Contact --> Message[メッセージ画面]\\n    \\n    MatchResult --> SaveResult[検索結果保存]\\n    TeamSuggestion --> SaveTeam[チーム構成保存]\"\n}"
+    },
+    {
+      "id": "コミュニケーション",
+      "value": "{\n    \"mermaid\": \"graph LR\\n    Login[ログイン画面] --> Home[ホーム画面]\\n    Home --> MessageList[メッセージ一覧]\\n    Home --> GroupList[グループ一覧]\\n    \\n    MessageList --> Chat[個別チャット画面]\\n    GroupList --> GroupChat[グループチャット画面]\\n    \\n    Chat --> UserProfile[ユーザープロフィール]\\n    Chat --> FileUpload[ファイルアップロード]\\n    \\n    GroupChat --> MemberList[メンバー一覧]\\n    GroupChat --> GroupSetting[グループ設定]\\n    GroupChat --> FileUpload\\n    \\n    MemberList --> UserProfile\\n    GroupSetting --> MemberInvite[メンバー招待]\"\n}"
+    },
+    {
+      "id": "データ分析",
+      "value": "{\n    \"mermaid\": \"graph LR\\n    Login[ログイン画面] --> Dashboard[データ分析ダッシュボード]\\n    \\n    Dashboard --> SkillMap[スキルマップ分析画面]\\n    Dashboard --> SynergyAnalysis[シナジー効果分析画面]\\n    Dashboard --> TalentReport[人材活用レポート画面]\\n    Dashboard --> SkillGap[スキルギャップ分析画面]\\n    \\n    SkillMap --> SkillMapDetail[スキルマップ詳細画面]\\n    SkillMap --> SkillMapReport[スキルマップレポート出力]\\n    \\n    SynergyAnalysis --> SynergyDetail[シナジー効果詳細画面]\\n    SynergyAnalysis --> KPIStatus[KPI達成状況画面]\\n    \\n    TalentReport --> TalentDetail[人材活用状況詳細画面]\\n    TalentReport --> GrowthReport[成長度分析画面]\\n    \\n    SkillGap --> GapDetail[スキルギャップ詳細画面]\\n    SkillGap --> TrainingPlan[育成施策提案画面]\"\n}"
+    }
+  ]
+}

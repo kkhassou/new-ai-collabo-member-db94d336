@@ -1,0 +1,6 @@
+{
+  "key": "systemArchitecture",
+  "value": {
+    "mermaid": "graph TD\n    subgraph Frontend\n        subgraph 一般社員UI\n            F1[プロフィール管理画面]\n            F2[スキル管理画面]\n            F3[課題アイデア管理画面]\n            F4[コミュニケーション画面]\n        end\n        subgraph 管理者UI\n            F5[人材分析画面]\n            F6[権限管理画面]\n            F7[レポート管理画面]\n        end\n    end\n    subgraph Backend\n        B1[認証認可サービス]\n        B2[プロフィール管理サービス]\n        B3[スキル管理サービス]\n        B4[マッチングエンジン]\n        B5[分析レポートサービス]\n        B6[メッセージングサービス]\n    end\n    subgraph Database\n        D1[(社員プロフィールDB)]\n        D2[(スキルDB)]\n        D3[(課題アイデアDB)]\n        D4[(コミュニケーションDB)]\n        D5[(分析レポートDB)]\n    end\n    subgraph External\n        E1[人事システム]\n        E2[メール配信サービス]\n    end\n    F1 --> B1\n    F1 --> B2\n    F2 --> B3\n    F3 --> B4\n    F4 --> B6\n    F5 --> B5\n    F6 --> B1\n    F7 --> B5\n    B1 --> D1\n    B2 --> D1\n    B3 --> D2\n    B4 --> D3\n    B5 --> D5\n    B6 --> D4\n    B2 <--> E1\n    B3 --> E2\n    B6 --> E2"
+  }
+}

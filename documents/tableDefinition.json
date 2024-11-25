@@ -1,0 +1,385 @@
+{
+  "key": "tableDefinition",
+  "value": [
+    {
+      "id": "TAB-001",
+      "table": "users",
+      "column": "id",
+      "dataType": "uuid",
+      "regulation": "PRIMARY KEY",
+      "defaultValue": "gen_random_uuid()",
+      "foreignKey": "",
+      "description": "ユーザーの一意識別子"
+    },
+    {
+      "id": "TAB-002",
+      "table": "users",
+      "column": "employee_id",
+      "dataType": "text",
+      "regulation": "UNIQUE NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "",
+      "description": "社員番号"
+    },
+    {
+      "id": "TAB-003",
+      "table": "users",
+      "column": "name",
+      "dataType": "text",
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "",
+      "description": "氏名"
+    },
+    {
+      "id": "TAB-004",
+      "table": "users",
+      "column": "department",
+      "dataType": "text",
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "",
+      "description": "所属部門"
+    },
+    {
+      "id": "TAB-005",
+      "table": "users",
+      "column": "position",
+      "dataType": "text",
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "",
+      "description": "役職"
+    },
+    {
+      "id": "TAB-006",
+      "table": "users",
+      "column": "email",
+      "dataType": "text",
+      "regulation": "UNIQUE NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "",
+      "description": "メールアドレス"
+    },
+    {
+      "id": "TAB-007",
+      "table": "users",
+      "column": "hire_date",
+      "dataType": "date",
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "",
+      "description": "入社日"
+    },
+    {
+      "id": "TAB-008",
+      "table": "users",
+      "column": "profile_data",
+      "dataType": "jsonb",
+      "regulation": "NOT NULL",
+      "defaultValue": "{\"phone\": \"\", \"address\": \"\", \"biography\": \"\"}",
+      "foreignKey": "",
+      "description": "追加プロフィール情報"
+    },
+    {
+      "id": "TAB-009",
+      "table": "skills",
+      "column": "id",
+      "dataType": "uuid",
+      "regulation": "PRIMARY KEY",
+      "defaultValue": "gen_random_uuid()",
+      "foreignKey": "",
+      "description": "スキルの一意識別子"
+    },
+    {
+      "id": "TAB-010",
+      "table": "skills",
+      "column": "name",
+      "dataType": "text",
+      "regulation": "UNIQUE NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "",
+      "description": "スキル名"
+    },
+    {
+      "id": "TAB-011",
+      "table": "skills",
+      "column": "category",
+      "dataType": "text",
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "",
+      "description": "スキルカテゴリ"
+    },
+    {
+      "id": "TAB-012",
+      "table": "user_skills",
+      "column": "id",
+      "dataType": "uuid",
+      "regulation": "PRIMARY KEY",
+      "defaultValue": "gen_random_uuid()",
+      "foreignKey": "",
+      "description": "ユーザースキルの一意識別子"
+    },
+    {
+      "id": "TAB-013",
+      "table": "user_skills",
+      "column": "user_id",
+      "dataType": "uuid",
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "users.id",
+      "description": "ユーザーID"
+    },
+    {
+      "id": "TAB-014",
+      "table": "user_skills",
+      "column": "skill_id",
+      "dataType": "uuid",
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "skills.id",
+      "description": "スキルID"
+    },
+    {
+      "id": "TAB-015",
+      "table": "user_skills",
+      "column": "level",
+      "dataType": "integer",
+      "regulation": "NOT NULL CHECK (level BETWEEN 1 AND 5)",
+      "defaultValue": "1",
+      "foreignKey": "",
+      "description": "スキルレベル（1-5）"
+    },
+    {
+      "id": "TAB-016",
+      "table": "user_skills",
+      "column": "years_of_experience",
+      "dataType": "numeric",
+      "regulation": "NOT NULL",
+      "defaultValue": "0",
+      "foreignKey": "",
+      "description": "経験年数"
+    },
+    {
+      "id": "TAB-017",
+      "table": "challenges",
+      "column": "id",
+      "dataType": "uuid",
+      "regulation": "PRIMARY KEY",
+      "defaultValue": "gen_random_uuid()",
+      "foreignKey": "",
+      "description": "課題の一意識別子"
+    },
+    {
+      "id": "TAB-018",
+      "table": "challenges",
+      "column": "title",
+      "dataType": "text",
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "",
+      "description": "課題タイトル"
+    },
+    {
+      "id": "TAB-019",
+      "table": "challenges",
+      "column": "description",
+      "dataType": "text",
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "",
+      "description": "課題詳細"
+    },
+    {
+      "id": "TAB-020",
+      "table": "challenges",
+      "column": "posted_by",
+      "dataType": "uuid",
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "users.id",
+      "description": "投稿者ID"
+    },
+    {
+      "id": "TAB-021",
+      "table": "challenges",
+      "column": "status",
+      "dataType": "text",
+      "regulation": "NOT NULL",
+      "defaultValue": "'open'",
+      "foreignKey": "",
+      "description": "課題ステータス（open, in_progress, closed）"
+    },
+    {
+      "id": "TAB-022",
+      "table": "challenges",
+      "column": "required_skills",
+      "dataType": "jsonb",
+      "regulation": "NOT NULL",
+      "defaultValue": "[{\"skill_id\": \"uuid\", \"minimum_level\": 1}]",
+      "foreignKey": "",
+      "description": "必要なスキル要件"
+    },
+    {
+      "id": "TAB-023",
+      "table": "ideas",
+      "column": "id",
+      "dataType": "uuid",
+      "regulation": "PRIMARY KEY",
+      "defaultValue": "gen_random_uuid()",
+      "foreignKey": "",
+      "description": "アイデアの一意識別子"
+    },
+    {
+      "id": "TAB-024",
+      "table": "ideas",
+      "column": "title",
+      "dataType": "text",
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "",
+      "description": "アイデアタイトル"
+    },
+    {
+      "id": "TAB-025",
+      "table": "ideas",
+      "column": "description",
+      "dataType": "text",
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "",
+      "description": "アイデア詳細"
+    },
+    {
+      "id": "TAB-026",
+      "table": "ideas",
+      "column": "posted_by",
+      "dataType": "uuid",
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "users.id",
+      "description": "投稿者ID"
+    },
+    {
+      "id": "TAB-027",
+      "table": "ideas",
+      "column": "required_resources",
+      "dataType": "jsonb",
+      "regulation": "NOT NULL",
+      "defaultValue": "{\"human_resources\": [], \"estimated_budget\": 0, \"timeline\": \"\"}",
+      "foreignKey": "",
+      "description": "必要リソース情報"
+    },
+    {
+      "id": "TAB-028",
+      "table": "matches",
+      "column": "id",
+      "dataType": "uuid",
+      "regulation": "PRIMARY KEY",
+      "defaultValue": "gen_random_uuid()",
+      "foreignKey": "",
+      "description": "マッチングの一意識別子"
+    },
+    {
+      "id": "TAB-029",
+      "table": "matches",
+      "column": "user_id",
+      "dataType": "uuid",
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "users.id",
+      "description": "マッチングされたユーザーID"
+    },
+    {
+      "id": "TAB-030",
+      "table": "matches",
+      "column": "target_type",
+      "dataType": "text",
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "",
+      "description": "マッチング対象タイプ（challenge/idea）"
+    },
+    {
+      "id": "TAB-031",
+      "table": "matches",
+      "column": "target_id",
+      "dataType": "uuid",
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "",
+      "description": "マッチング対象ID"
+    },
+    {
+      "id": "TAB-032",
+      "table": "matches",
+      "column": "match_score",
+      "dataType": "numeric",
+      "regulation": "NOT NULL",
+      "defaultValue": "0",
+      "foreignKey": "",
+      "description": "マッチングスコア"
+    },
+    {
+      "id": "TAB-033",
+      "table": "messages",
+      "column": "id",
+      "dataType": "uuid",
+      "regulation": "PRIMARY KEY",
+      "defaultValue": "gen_random_uuid()",
+      "foreignKey": "",
+      "description": "メッセージの一意識別子"
+    },
+    {
+      "id": "TAB-034",
+      "table": "messages",
+      "column": "sender_id",
+      "dataType": "uuid",
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "users.id",
+      "description": "送信者ID"
+    },
+    {
+      "id": "TAB-035",
+      "table": "messages",
+      "column": "receiver_id",
+      "dataType": "uuid",
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "users.id",
+      "description": "受信者ID"
+    },
+    {
+      "id": "TAB-036",
+      "table": "messages",
+      "column": "content",
+      "dataType": "text",
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "",
+      "description": "メッセージ内容"
+    },
+    {
+      "id": "TAB-037",
+      "table": "messages",
+      "column": "sent_at",
+      "dataType": "timestamp with time zone",
+      "regulation": "NOT NULL",
+      "defaultValue": "CURRENT_TIMESTAMP",
+      "foreignKey": "",
+      "description": "送信日時"
+    },
+    {
+      "id": "TAB-038",
+      "table": "messages",
+      "column": "read_at",
+      "dataType": "timestamp with time zone",
+      "regulation": "",
+      "defaultValue": "",
+      "foreignKey": "",
+      "description": "既読日時"
+    }
+  ]
+}

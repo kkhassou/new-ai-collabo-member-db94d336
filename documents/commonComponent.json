@@ -1,0 +1,101 @@
+{
+  "key": "commonComponent",
+  "value": [
+    {
+      "id": "COM-001",
+      "category": "レイアウト",
+      "fileName": "Header.tsx",
+      "description": "全画面共通のヘッダーコンポーネント。ナビゲーションメニュー、ユーザー情報、通知表示などを含む",
+      "props": "{user: UserInfo, notifications: NotificationInfo[]}",
+      "screensIds": [
+        "SCR-001",
+        "SCR-002",
+        "SCR-003",
+        "SCR-004",
+        "SCR-005",
+        "SCR-006",
+        "SCR-007",
+        "SCR-008",
+        "SCR-009",
+        "SCR-010",
+        "SCR-011",
+        "SCR-012",
+        "SCR-013",
+        "SCR-014",
+        "SCR-015",
+        "SCR-016",
+        "SCR-017",
+        "SCR-018",
+        "SCR-019",
+        "SCR-020"
+      ]
+    },
+    {
+      "id": "COM-002",
+      "category": "レイアウト",
+      "fileName": "Footer.tsx",
+      "description": "全画面共通のフッターコンポーネント。著作権表示、サイトマップ、問い合わせリンクなどを含む",
+      "props": "{copyright: string, links: LinkInfo[]}",
+      "screensIds": [
+        "SCR-001",
+        "SCR-002",
+        "SCR-003",
+        "SCR-004",
+        "SCR-005",
+        "SCR-006",
+        "SCR-007",
+        "SCR-008",
+        "SCR-009",
+        "SCR-010",
+        "SCR-011",
+        "SCR-012",
+        "SCR-013",
+        "SCR-014",
+        "SCR-015",
+        "SCR-016",
+        "SCR-017",
+        "SCR-018",
+        "SCR-019",
+        "SCR-020"
+      ]
+    },
+    {
+      "id": "COM-003",
+      "category": "レイアウト",
+      "fileName": "Sidebar.tsx",
+      "description": "サイドバーナビゲーションコンポーネント。メニュー項目、アクセス権限に応じた表示制御を含む",
+      "props": "{menuItems: MenuItem[], userRole: string}",
+      "screensIds": [
+        "SCR-002",
+        "SCR-003",
+        "SCR-004",
+        "SCR-005",
+        "SCR-006",
+        "SCR-007",
+        "SCR-008",
+        "SCR-009",
+        "SCR-010",
+        "SCR-011",
+        "SCR-012",
+        "SCR-013",
+        "SCR-014",
+        "SCR-015",
+        "SCR-016",
+        "SCR-017",
+        "SCR-018",
+        "SCR-019",
+        "SCR-020"
+      ]
+    },
+    {
+      "id": "COM-004",
+      "category": "認証",
+      "fileName": "AuthLayout.tsx",
+      "description": "認証関連画面用の共通レイアウトコンポーネント。ログイン、パスワードリセット等の画面で使用",
+      "props": "{children: ReactNode, title: string}",
+      "screensIds": [
+        "SCR-001"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "key": "nonFunctionsList",
+  "value": [
+    {
+      "id": "NON-001",
+      "category": "パフォーマンス",
+      "non_function_name": "レスポンス時間",
+      "description": "画面遷移やデータ検索のレスポンス時間は3秒以内とする。AIマッチング処理は10秒以内に完了すること。"
+    },
+    {
+      "id": "NON-002",
+      "category": "可用性",
+      "non_function_name": "システム稼働時間",
+      "description": "システムの稼働率は99.9%以上を確保する。計画メンテナンス以外のダウンタイムは月間で1時間以内とする。"
+    },
+    {
+      "id": "NON-003",
+      "category": "セキュリティ",
+      "non_function_name": "アクセス制御",
+      "description": "社員情報へのアクセスは役職・部門に応じた権限管理を行う。すべてのアクセスログを取得し、不正アクセスを監視する。"
+    },
+    {
+      "id": "NON-004",
+      "category": "セキュリティ",
+      "non_function_name": "データ保護",
+      "description": "個人情報を含むデータは暗号化して保存する。データベースへのアクセスは認証済みのアプリケーションからのみ許可する。"
+    },
+    {
+      "id": "NON-005",
+      "category": "拡張性",
+      "non_function_name": "ユーザー数対応",
+      "description": "同時接続ユーザー数1000人までストレスなく動作すること。将来的な社員数の増加にも対応できるスケーラブルな設計とする。"
+    },
+    {
+      "id": "NON-006",
+      "category": "保守性",
+      "non_function_name": "システム監視",
+      "description": "システムの稼働状況、リソース使用率、エラー発生状況などを常時監視し、問題を早期に検知できる体制を整備する。"
+    },
+    {
+      "id": "NON-007",
+      "category": "バックアップ",
+      "non_function_name": "データバックアップ",
+      "description": "システムデータは日次でバックアップを取得し、災害時にも1営業日以内にシステムを復旧できる体制を整える。"
+    },
+    {
+      "id": "NON-008",
+      "category": "ユーザビリティ",
+      "non_function_name": "操作性",
+      "description": "直感的な操作が可能なUIとし、新規ユーザーでも30分以内での基本操作習得を実現する。"
+    },
+    {
+      "id": "NON-009",
+      "category": "互換性",
+      "non_function_name": "ブラウザ対応",
+      "description": "主要ブラウザ（Chrome、Edge、Safari、Firefox）の最新版と1つ前のバージョンで正常動作すること。"
+    },
+    {
+      "id": "NON-010",
+      "category": "コンプライアンス",
+      "non_function_name": "法令遵守",
+      "description": "個人情報保護法、労働関連法規など関連法令を遵守したシステム設計・運用を行う。"
+    },
+    {
+      "id": "NON-011",
+      "category": "性能",
+      "non_function_name": "AI処理性能",
+      "description": "AIマッチングの精度は80%以上を維持すること。また、マッチング結果の定期的な精度評価と改善を実施する。"
+    },
+    {
+      "id": "NON-012",
+      "category": "インターフェース",
+      "non_function_name": "外部連携",
+      "description": "人事システムなど既存の社内システムとのデータ連携は、セキュアなAPI経由で実施し、リアルタイム連携を基本とする。"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "key": "sequenceDiagram",
+  "value": [
+    {
+      "id": "プロフィール管理",
+      "value": "{\n  \"mermaid\": \"sequenceDiagram\\n    actor User\\n    participant Frontend\\n    participant Backend\\n    participant DB\\n\\n    %% プロフィール情報の登録・更新\\n    User->>Frontend: プロフィール情報入力\\n    Frontend->>Backend: プロフィール登録リクエスト\\n    Backend->>DB: プロフィールデータ保存\\n    DB-->>Backend: 保存完了通知\\n    Backend-->>Frontend: 登録完了レスポンス\\n    Frontend-->>User: 完了メッセージ表示\\n\\n    %% 人事データ連携\\n    Backend->>DB: 人事データ取得要求\\n    DB-->>Backend: 人事データ返却\\n    Backend->>DB: プロフィール更新\\n    DB-->>Backend: 更新完了通知\\n\\n    %% 経歴情報管理\\n    User->>Frontend: 経歴情報入力\\n    Frontend->>Backend: 経歴情報登録リクエスト\\n    Backend->>DB: 経歴データ保存\\n    DB-->>Backend: 保存完了通知\\n    Backend-->>Frontend: 登録完了レスポンス\\n    Frontend-->>User: 更新完了表示\\n\\n    %% アクセス権限設定\\n    User->>Frontend: 権限設定操作\\n    Frontend->>Backend: 権限設定リクエスト\\n    Backend->>DB: 権限情報更新\\n    DB-->>Backend: 更新完了通知\\n    Backend-->>Frontend: 設定完了レスポンス\\n    Frontend-->>User: 権限設定完了表示\"\n}"
+    },
+    {
+      "id": "スキル管理",
+      "value": "{\n  \"mermaid\": \"sequenceDiagram\\n    actor User\\n    participant Frontend\\n    participant Backend\\n    participant DB\\n\\n    %% スキル登録フロー\\n    User->>Frontend: スキル登録画面を開く\\n    Frontend->>Backend: スキルカテゴリ一覧取得要求\\n    Backend->>DB: SELECT skills_categories\\n    DB->>Backend: カテゴリデータ\\n    Backend->>Frontend: カテゴリ一覧を返却\\n    Frontend->>User: スキル登録フォームを表示\\n    User->>Frontend: スキル情報入力\\n    Frontend->>Backend: スキル登録リクエスト\\n    Backend->>DB: INSERT user_skills\\n    DB->>Backend: 登録結果\\n    Backend->>Frontend: 登録完了通知\\n    Frontend->>User: 完了メッセージ表示\\n\\n    %% スキル検索フロー\\n    User->>Frontend: スキル検索条件入力\\n    Frontend->>Backend: 検索リクエスト\\n    Backend->>DB: SELECT user_skills JOIN users\\n    DB->>Backend: 検索結果データ\\n    Backend->>Frontend: 検索結果返却\\n    Frontend->>User: 検索結果一覧表示\\n\\n    %% スキル更新アラート\\n    Backend->>DB: SELECT 未更新ユーザー\\n    DB->>Backend: 対象ユーザーリスト\\n    Backend->>Frontend: アラート通知\\n    Frontend->>User: 更新リマインド表示\"\n}"
+    },
+    {
+      "id": "興味関心管理",
+      "value": "{\n    \"mermaid\": \"sequenceDiagram\\n    User->>Frontend: 興味関心情報入力\\n    Frontend->>Backend: 興味関心データ送信\\n    Backend->>DB: 興味関心データ保存リクエスト\\n    DB->>Backend: 保存完了レスポンス\\n    Backend->>Frontend: 登録完了通知\\n    Frontend->>User: 完了メッセージ表示\\n    Backend->>DB: 興味関心データ取得リクエスト\\n    DB->>Backend: 興味関心データ返却\\n    Backend->>Frontend: 更新された興味関心情報送信\\n    Frontend->>User: 興味関心情報表示更新\"\n}"
+    },
+    {
+      "id": "課題管理",
+      "value": "{\n  \"mermaid\": \"sequenceDiagram\\n    User->>Frontend: 課題投稿画面を表示\\n    Frontend->>Backend: 課題投稿画面データを要求\\n    Backend->>DB: スキル情報の取得\\n    DB->>Backend: スキルデータを返却\\n    Backend->>Frontend: 画面データを返却\\n    Frontend->>User: 課題投稿フォームを表示\\n    User->>Frontend: 課題情報を入力し投稿\\n    Frontend->>Backend: 課題データを送信\\n    Backend->>DB: 課題データを保存\\n    DB->>Backend: 保存完了を通知\\n    Backend->>Frontend: 投稿完了を通知\\n    Frontend->>User: 完了メッセージを表示\\n    User->>Frontend: ステータス更新要求\\n    Frontend->>Backend: ステータス更新データを送信\\n    Backend->>DB: 課題ステータスを更新\\n    DB->>Backend: 更新完了を通知\\n    Backend->>Frontend: ステータス更新完了を通知\\n    Frontend->>User: 更新完了を表示\"\n}"
+    },
+    {
+      "id": "アイデア管理",
+      "value": "{\n  \"mermaid\": \"sequenceDiagram\\n    actor User\\n    participant Frontend\\n    participant Backend\\n    participant DB\\n\\n    %% アイデア投稿フロー\\n    User->>Frontend: アイデア投稿画面を開く\\n    Frontend->>Backend: アイデア投稿画面データ要求\\n    Backend->>DB: スキルデータ取得\\n    DB->>Backend: スキルデータ返却\\n    Backend->>Frontend: 画面データ返却\\n    Frontend->>User: アイデア投稿フォーム表示\\n    User->>Frontend: アイデア情報入力\\n    Frontend->>Backend: アイデアデータ送信\\n    Backend->>DB: アイデアデータ保存\\n    DB->>Backend: 保存完了通知\\n    Backend->>Frontend: 投稿完了応答\\n    Frontend->>User: 完了メッセージ表示\\n\\n    %% アイデア評価フロー\\n    User->>Frontend: アイデア評価画面を開く\\n    Frontend->>Backend: アイデア情報要求\\n    Backend->>DB: アイデアデータ取得\\n    DB->>Backend: アイデアデータ返却\\n    Backend->>Frontend: アイデア情報返却\\n    Frontend->>User: アイデア評価フォーム表示\\n    User->>Frontend: 評価点数とコメント入力\\n    Frontend->>Backend: 評価データ送信\\n    Backend->>DB: 評価データ保存\\n    DB->>Backend: 保存完了通知\\n    Backend->>Frontend: 評価完了応答\\n    Frontend->>User: 評価完了メッセージ表示\"\n}"
+    },
+    {
+      "id": "AIマッチング",
+      "value": "{\n  \"mermaid\": \"sequenceDiagram\\n    User->>Frontend: プロジェクト要件入力\\n    Frontend->>Backend: マッチング検索リクエスト\\n    Backend->>DB: スキルデータ取得\\n    DB-->>Backend: スキルデータ返却\\n    Backend->>DB: ユーザープロフィール取得\\n    DB-->>Backend: プロフィールデータ返却\\n    Backend->>Backend: AIマッチング計算処理\\n    Backend->>DB: マッチング結果保存\\n    DB-->>Backend: 保存完了通知\\n    Backend-->>Frontend: マッチング結果返却\\n    Frontend-->>User: 候補者リスト表示\\n    User->>Frontend: チーム編成パターン選択\\n    Frontend->>Backend: チーム最適化リクエスト\\n    Backend->>Backend: チーム構成最適化処理\\n    Backend->>DB: チーム編成案保存\\n    DB-->>Backend: 保存完了通知\\n    Backend-->>Frontend: 最適チーム構成返却\\n    Frontend-->>User: チーム編成案表示\"\n}"
+    },
+    {
+      "id": "コミュニケーション",
+      "value": "{\n  \"mermaid\": \"sequenceDiagram\\n    actor User\\n    participant Frontend\\n    participant Backend\\n    participant DB\\n\\n    User->>Frontend: メッセージ送信リクエスト\\n    Frontend->>Backend: メッセージデータ送信\\n    Backend->>DB: メッセージ情報保存\\n    DB-->>Backend: 保存完了\\n    Backend-->>Frontend: 送信完了通知\\n    Frontend-->>User: メッセージ送信完了表示\\n\\n    User->>Frontend: グループチャット参加\\n    Frontend->>Backend: チャットルーム参加リクエスト\\n    Backend->>DB: 参加情報登録\\n    DB-->>Backend: 登録完了\\n    Backend-->>Frontend: チャット履歴取得\\n    Frontend-->>User: チャットルーム表示\\n\\n    User->>Frontend: メッセージ閲覧\\n    Frontend->>Backend: 既読状態更新\\n    Backend->>DB: 既読情報更新\\n    DB-->>Backend: 更新完了\\n    Backend-->>Frontend: 既読状態反映\\n    Frontend-->>User: 既読表示更新\"\n}"
+    },
+    {
+      "id": "データ分析",
+      "value": "{\n  \"mermaid\": \"sequenceDiagram\\n    User->>Frontend: スキルマップ分析画面を開く\\n    Frontend->>Backend: スキルデータ取得リクエスト\\n    Backend->>DB: スキルデータクエリ実行\\n    DB->>Backend: スキルデータ\\n    Backend->>Backend: スキルマップ生成処理\\n    Backend->>Frontend: スキルマップデータ返却\\n    Frontend->>User: スキルマップ表示\\n    User->>Frontend: 部門フィルター選択\\n    Frontend->>Backend: フィルター条件送信\\n    Backend->>DB: 部門別データクエリ実行\\n    DB->>Backend: フィルター済データ\\n    Backend->>Backend: データ集計処理\\n    Backend->>Frontend: 集計結果返却\\n    Frontend->>User: 更新されたビュー表示\\n    User->>Frontend: レポート出力要求\\n    Frontend->>Backend: レポート生成リクエスト\\n    Backend->>Backend: レポートデータ作成\\n    Backend->>Frontend: PDFレポート返却\\n    Frontend->>User: レポートダウンロード提供\"\n}"
+    }
+  ]
+}
